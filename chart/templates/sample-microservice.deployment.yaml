@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment                 # Type of Kubernetes resource
+metadata:
+  name: go-sample                # Name of the Kubernetes resource
+spec:
+  replicas: 1                    # Number of pods to run at any given time
+  selector:
+    matchLabels:
+      app: go-sample             # This deployment applies to any Pods matching the specified label
+  template:                      # This deployment will create a set of pods using the configurations in this template
+    metadata:
+      labels:                    # The labels that will be applied to all of the pods in this deployment
+        app: go-sample 
+    spec:                        # Spec for the container which will run in the Pod
+      containers:
+      - name: go-sample
+        image: spmonitorcontainerregistry.azurecr.io/go-sample:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 3333
+        resources:
+          limits:
+            memory: 100Mi
+            cpu: 100m
+          requests:
+            memory: 100Mi
+            cpu: 100m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-sample-svc
+  annotations:
+    prometheus/scrape: "true"
+    prometheus/scheme: "http"
+    prometheus/path: "/metrics"
+    prometheus/port: "3333"
+  labels:
+    app: go-sample
+spec:
+  ports:
+  - port: 3333
+    protocol: TCP
+  selector:
+    app: go-sample
+
