@@ -1,9 +1,6 @@
 /figures
 /umlet
-Chart.yaml
-values.yaml
+/chart
 /templates
-build.sh
-.helmignore
 README.md
 .git
