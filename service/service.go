@@ -6,8 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
-
-	"github.com/go-sample/monitoring"
+	"github.com/sample-microservice/spmonitorlibrary"
 )
 
 var numDDL *monitoring.CounterMetric

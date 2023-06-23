@@ -1,6 +1,6 @@
 FROM golang:latest as builder
 
-ADD ../spmonitor-library /go/src/spmonitor-library
+ADD ../spmonitorlibrary /go/src/spmonitorlibrary
 ADD ../service /go/src/service
 WORKDIR /go/src/service
 

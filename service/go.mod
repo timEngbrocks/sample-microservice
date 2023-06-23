@@ -2,9 +2,9 @@ module main
 
 go 1.20
 
-replace github.com/sample-microservice/spmonitor-library => ../monitoring
+replace github.com/sample-microservice/spmonitorlibrary => ../spmonitorlibrary
 
-require github.com/sample-microservice/spmonitor-library v0.0.0-00010101000000-000000000000
+require github.com/sample-microservice/spmonitorlibrary v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
