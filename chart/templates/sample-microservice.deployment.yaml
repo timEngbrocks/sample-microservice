@@ -14,7 +14,7 @@ spec:
     spec:                        # Spec for the container which will run in the Pod
       containers:
       - name: go-sample
-        image: spmonitorcontainerregistry.azurecr.io/go-sample:latest
+        image: ghcr.io/timengbrocks/sample-microservice:main
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 3333

@@ -1,0 +1,13 @@
+entries:
+  sample-microservice:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-06-23T23:35:30.147507483+02:00"
+    description: A Helm chart for a sample microservice in GO
+    digest: 44a26d128d0628c591fc07b72bb2d2baa2e4b996b02bb87f65495ee6bd9b9bf9
+    name: sample-microservice
+    type: application
+    urls:
+    - sample-microservice-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-06-23T23:35:30.146810081+02:00"
